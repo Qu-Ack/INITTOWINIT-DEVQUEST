@@ -101,6 +101,7 @@ func (s state) handlePushImage(c *gin.Context) {
 
 	userCollection := s.DB.Collection("users")
 
+	// Update user's document to add the new image
 	filter := bson.D{{"UserID", userid}}
 	update := bson.D{{"$push", bson.D{{"Images", body.ImageUrl}}}}
 

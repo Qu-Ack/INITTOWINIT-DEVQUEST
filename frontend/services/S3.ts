@@ -53,7 +53,7 @@ async function makePutRequestToS3(
 ) {
   try {
     console.log(url);
-    console.log(file);
+    console.log(file.type);
     const response = await fetch(url, {
       method: "PUT",
       headers: {

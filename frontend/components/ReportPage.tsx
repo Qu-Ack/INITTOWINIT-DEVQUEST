@@ -5,55 +5,57 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
 
-export default function ReportPage() {
-  const [report, setReport] = useState<MedicalReport | null>(null);
-  const [messages, setMessages] = useState<ChatMessage[]>([]);
+export default function ReportPage({ report }: { report: any }) {
+  const [messages, setMessages] = useState<any[]>([]);
   const [input, setInput] = useState("");
 
   useEffect(() => {
-    // Simulating API call to fetch report data
-    const fetchReport = async () => {
-      // In a real application, this would be an API call
-      const reportData: MedicalReport = {
-        disease: "Calcium Deficiency",
-        dosha_analysis: {
-          vata: "severely imbalanced",
-          pitta: "balanced",
-          kapha: "balanced",
-        },
-        observations: [
-          "Peeling nails and dry skin indicate calcium deficiency.",
-          "Slow nail growth suggests systemic Vata imbalance.",
-        ],
-        recommendations: {
-          diet: [
-            "Include calcium-rich foods like milk, almonds, and leafy greens.",
-            "Consume sesame seeds for bone health.",
-          ],
-          lifestyle: [
-            "Avoid overexertion and prioritize restful sleep.",
-            "Use warm mustard oil for skin hydration.",
-          ],
-          herbal_remedies: [
-            "Ashwagandha for improving bone strength.",
-            "Musta for aiding digestion and nutrient absorption.",
-            "Licorice tea for reducing dryness.",
-          ],
-        },
-      };
-      setReport(reportData);
-    };
-
-    fetchReport();
+    async function sendInitialReport() {
+      try {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_PYTHON_URL}/chat`,
+          {
+            method: "POST",
+            body: JSON.stringify({ message: report }),
+          },
+        );
+        if (!response.ok) {
+          return;
+        }
+        const data = await response.json();
+        setMessages([...messages, { role: "ai", content: data.response }]);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    sendInitialReport();
   }, []);
 
-  const handleSendMessage = () => {
+  async function sendMessage(msg: string) {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_PYTHON_URL}/chat`,
+        {
+          method: "POST",
+          body: JSON.stringify({ message: msg }),
+        },
+      );
+      if (!response.ok) {
+        return;
+      }
+      const data = await response.json();
+      setMessages([...messages, { role: "ai", content: data.response }]);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  const handleSendMessage = async () => {
     if (input.trim()) {
       setMessages([...messages, { role: "user", content: input }]);
       setInput("");
-      // Simulating AI response
+      await sendMessage(input.trim());
       setTimeout(() => {
         setMessages((prev) => [
           ...prev,
@@ -127,9 +129,9 @@ export default function ReportPage() {
                         className="text-center p-2 border rounded"
                       >
                         <div className="font-medium capitalize">{dosha}</div>
-                        <div>{status}</div>
+                        <div>{}</div>
                       </div>
-                    )
+                    ),
                   )}
                 </div>
               </div>
@@ -168,7 +170,7 @@ export default function ReportPage() {
                       {report.recommendations.herbal_remedies.map(
                         (item, index) => (
                           <li key={index}>{item}</li>
-                        )
+                        ),
                       )}
                     </ul>
                   </div>

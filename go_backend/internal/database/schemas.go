@@ -30,11 +30,12 @@ type Dosha struct {
 }
 
 type User struct {
-	ID     primitive.ObjectID `bson:"_id,omitempty"`
-	Name   string             `bson:"Name,omitempty" json:"Name"`
-	Email  string             `bson:"Email,omitempty" json:"Email"`
-	UserID string             `bson:"UserID,omitempty" json:"UserID"`
-	Images []string           `bson:"Images,omitempty" json:"Images"`
+	ID      primitive.ObjectID   `bson:"_id,omitempty"`
+	Name    string               `bson:"Name,omitempty" json:"Name"`
+	Email   string               `bson:"Email,omitempty" json:"Email"`
+	UserID  string               `bson:"UserID,omitempty" json:"UserID"`
+	Images  []string             `bson:"Images,omitempty" json:"Images"`
+	Reports []primitive.ObjectID `bson:"Reports,omitempty" json:"Reports"`
 }
 
 type Post struct {

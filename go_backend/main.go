@@ -76,6 +76,7 @@ func main() {
 	router.PUT("/user/:userid/image", SessionMiddleware(), state.handlePushImage)
 
 	router.POST("/report", SessionMiddleware(), state.handlePostReport)
+	router.GET("/report/:reportid", SessionMiddleware(), state.handleGetReport)
 
 	router.Run()
 
