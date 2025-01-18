@@ -94,7 +94,7 @@ function MedicalReport() {
             {schema.outputs.recommendations.herbal_remedies.map(
               (item, index) => (
                 <li key={index}>{item}</li>
-              )
+              ),
             )}
           </ul>
         </div>

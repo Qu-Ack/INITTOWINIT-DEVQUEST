@@ -1,3 +1,4 @@
+"use client";
 import { MessageCircle, Home, FileText, Megaphone } from "lucide-react";
 import Link from "next/link";
 
@@ -17,22 +18,22 @@ import {
 const dashboardItems = [
   {
     title: "Home",
-    url: "/test/home",
+    url: `/dashboard/${localStorage.getItem("userid")}/home`,
     icon: Home,
   },
   {
     title: "Consultation",
-    url: "/test/consultation",
+    url: `/dashboard/${localStorage.getItem("userid")}/consultation`,
     icon: Megaphone,
   },
   {
     title: "Previous Reports",
-    url: "/test/previous_reports",
+    url: `/dashboard/${localStorage.getItem("userid")}/previous_reports`,
     icon: FileText,
   },
   {
     title: "Chat Assistant",
-    url: "/test/chat_assistant",
+    url: `/dashboard/${localStorage.getItem("userid")}/chat_assistant`,
     icon: MessageCircle,
   },
 ];
