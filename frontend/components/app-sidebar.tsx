@@ -23,17 +23,17 @@ const dashboardItems = [
   },
   {
     title: "Consultation",
-    url: `/dashboard/${localStorage.getItem("userid")}/consultation`,
+    url: "/test/consultation",
     icon: Megaphone,
   },
   {
     title: "Previous Reports",
-    url: `/dashboard/${localStorage.getItem("userid")}/previous_reports`,
+    url: "/test/previous_reports",
     icon: FileText,
   },
   {
     title: "Chat Assistant",
-    url: `/dashboard/${localStorage.getItem("userid")}/chat_assistant`,
+    url: "/test/chat_assistant",
     icon: MessageCircle,
   },
 ];

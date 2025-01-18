@@ -1,3 +1,2 @@
-import { AppSidebar } from "@/components/app-sidebar";
-
-export default AppSidebar;
+import HomePage from "@/components/HomePage";
+export default HomePage;
