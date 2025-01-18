@@ -48,7 +48,7 @@ export default function Hero() {
             onClick={handleLogin}
             className="bg-lime-400 text-gray-900 text-lg h-12 px-8 rounded-full hover:bg-lime-500 hover:translate-x-4 transition-transform duration-300 ease-in-out flex items-center"
           >
-            Get your free consultation now!
+            Get your free diagnosis now!
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
