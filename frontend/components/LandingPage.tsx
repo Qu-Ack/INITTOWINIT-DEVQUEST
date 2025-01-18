@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 function NavBar() {
@@ -8,6 +7,10 @@ function NavBar() {
     { title: "About Us" },
     { title: "Contact" },
   ];
+
+  function handleLogin() {
+    window.location.href = "http://localhost:8080/auth/google/start/";
+  }
 
   return (
     <nav className="container mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
@@ -21,8 +24,11 @@ function NavBar() {
           </li>
         ))}
       </ul>
-      <Button className="bg-lime-400 text-gray-900 rounded-full border-2 border-lime-400 hover:bg-gray-900 hover:text-white hover:border-white flex items-center gap-2">
-        Register Now
+      <Button
+        onClick={handleLogin}
+        className="bg-lime-400 text-gray-900 rounded-full border-2 border-lime-400 hover:bg-gray-900 hover:text-white hover:border-white flex items-center gap-2"
+      >
+        Sign Up With Google
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

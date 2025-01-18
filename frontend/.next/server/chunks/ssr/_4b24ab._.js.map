@@ -8,7 +8,7 @@
     {"offset": {"line": 29, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
     {"offset": {"line": 35, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
     {"offset": {"line": 39, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
-    {"offset": {"line": 45, "column": 0}, "map": {"version":3,"sources":["file:///home/sk/Documents/web-dev/iitjodhpur/frontend/app/test/report/page.tsx"],"sourcesContent":["import ReportPage from \"@/components/ReportPage\";\n\nexport default ReportPage;\n"],"names":[],"mappings":";;;AAAA;;uCAEe,yHAAA,CAAA,UAAU"}},
+    {"offset": {"line": 45, "column": 0}, "map": {"version":3,"sources":["file:///home/sk/Documents/web-dev/iitjodhpur/frontend/app/test/report/page.tsx"],"sourcesContent":["import ReportPage from \"@/components/ReportPage\";\nexport default ReportPage;\n"],"names":[],"mappings":";;;AAAA;;uCACe,yHAAA,CAAA,UAAU"}},
     {"offset": {"line": 51, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
     {"offset": {"line": 62, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
     {"offset": {"line": 62, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},

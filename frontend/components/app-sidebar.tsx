@@ -1,3 +1,4 @@
+"use client";
 import { MessageCircle, Home, FileText, Megaphone } from "lucide-react";
 import Link from "next/link";
 
@@ -17,7 +18,7 @@ import {
 const dashboardItems = [
   {
     title: "Home",
-    url: "/test/home",
+    url: `/dashboard/${localStorage.getItem("userid")}/home`,
     icon: Home,
   },
   // {

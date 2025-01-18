@@ -87,7 +87,7 @@ export default function HomePage() {
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {userData.Images.map((image, index) => (
-              <Link href={`@/test/report/`} key={index}>
+              <Link href={`/test/report/`} key={index}>
                 <div className="relative h-48 rounded-lg overflow-hidden hover:opacity-75 transition-opacity border">
                   <Image
                     src={image || "/placeholder.svg"}
