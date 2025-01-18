@@ -42,7 +42,7 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader className="text-lime-400 text-4xl my-6 mx-4">
-        AyurVed
+        VedAssist
       </SidebarHeader>
       <SidebarContent className="mx-2">
         <SidebarGroup>
