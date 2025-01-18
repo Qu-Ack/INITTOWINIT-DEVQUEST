@@ -21,21 +21,21 @@ const dashboardItems = [
     url: `/dashboard/${localStorage.getItem("userid")}/home`,
     icon: Home,
   },
-  // {
-  //   title: "Consultation",
-  //   url: "/test/consultation",
-  //   icon: Megaphone,
-  // },
-  // {
-  //   title: "Previous Reports",
-  //   url: "/test/previous_reports",
-  //   icon: FileText,
-  // },
-  // {
-  //   title: "Chat Assistant",
-  //   url: "/test/chat_assistant",
-  //   icon: MessageCircle,
-  // },
+  {
+    title: "Consultation",
+    url: "/test/consultation",
+    icon: Megaphone,
+  },
+  {
+    title: "Previous Reports",
+    url: "/test/previous_reports",
+    icon: FileText,
+  },
+  {
+    title: "Chat Assistant",
+    url: "/test/chat_assistant",
+    icon: MessageCircle,
+  },
 ];
 
 export function AppSidebar() {
