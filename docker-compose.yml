@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  go_backend:
+    build:
+      context: ./go_backend
+    container_name: go_backend
+    environment:
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - MONGODB_URI=${MONGODB_URI}
+      - PORT=8080
+    ports:
+      - "8080:8080"
+    networks:
+      - app_network
+
+  nextjs_frontend:
+    build:
+      context: ./frontend
+    container_name: nextjs_frontend
+    environment:
+      - NEXT_PUBLIC_API_URL=http://go_backend:8080
+    ports:
+      - "3000:3000"
+    depends_on:
+      - go_backend
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+

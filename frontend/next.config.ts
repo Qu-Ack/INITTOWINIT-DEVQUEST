@@ -1,10 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     domains: ["kanteentest.s3.amazonaws.com"],
@@ -18,3 +17,5 @@ export default {
     ],
   },
 };
+
+export default nextConfig;

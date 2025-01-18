@@ -91,20 +91,19 @@ export default function Dashboard({ params }: { params: { userid: string } }) {
       console.log(data);
       setError("");
       setLoading(false);
-      // request to flask api
 
       const response2 = await fetch(
-        `${process.env.NEXT_PUBLIC_PYTHON_URL}/image`,
+        `${process.env.NEXT_PUBLIC_PYTHON_URL}/analyze`,
         {
           method: "POST",
           body: JSON.stringify({
-            ImageUrl: image_url,
+            Url: image_url,
             Type: form_Data.image.type,
           }),
         },
       );
 
-      if (!response.ok) {
+      if (!response2.ok) {
         const data = await response.json();
         console.log(data);
         setError("something went wrong");

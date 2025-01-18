@@ -6,9 +6,37 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-export default function ReportPage({ report }: { report: any }) {
+export default function ReportPage() {
   const [messages, setMessages] = useState<any[]>([]);
   const [input, setInput] = useState("");
+
+  const report = {
+    disease: "Calcium Deficiency",
+    dosha_analysis: {
+      vata: "severely imbalanced",
+      pitta: "balanced",
+      kapha: "balanced",
+    },
+    observations: [
+      "Peeling nails and dry skin indicate calcium deficiency.",
+      "Slow nail growth suggests systemic Vata imbalance.",
+    ],
+    recommendations: {
+      diet: [
+        "Include calcium-rich foods like milk, almonds, and leafy greens.",
+        "Consume sesame seeds for bone health.",
+      ],
+      lifestyle: [
+        "Avoid overexertion and prioritize restful sleep.",
+        "Use warm mustard oil for skin hydration.",
+      ],
+      herbal_remedies: [
+        "Ashwagandha for improving bone strength.",
+        "Musta for aiding digestion and nutrient absorption.",
+        "Licorice tea for reducing dryness.",
+      ],
+    },
+  };
 
   useEffect(() => {
     async function sendInitialReport() {

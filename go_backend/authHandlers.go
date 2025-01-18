@@ -61,7 +61,7 @@ func (s state) OAuthCallback(c *gin.Context) {
 	}
 
 	// Redirect to the frontend
-	http.Redirect(c.Writer, c.Request, fmt.Sprintf("http://localhost:3000/dashboard/%v", user.UserID), http.StatusTemporaryRedirect)
+	http.Redirect(c.Writer, c.Request, fmt.Sprintf("http://localhost:3000/dashboard/%v/home", user.UserID), http.StatusTemporaryRedirect)
 }
 
 func SessionMiddleware() gin.HandlerFunc {
